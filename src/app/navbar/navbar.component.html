@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" class="navbar">
+    <span class="logo">
+        <img src="removebg-preview.png" alt="Logo" class="logo-img" />
+    </span>
+    <span class="spacer"></span>
+    <ul class="jul" #navList (click)="onClick($event)">
+        <li *ngFor="let item of navItems" [class.active]="activeItem === item">
+            {{ item }}
+        </li>
+        <div class="underline" #underline></div>
+    </ul>
+</mat-toolbar>

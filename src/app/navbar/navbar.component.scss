@@ -1,0 +1,109 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  height: 70px;
+
+  /* 🌤️ Sky Blue Gradient Background */
+  background: linear-gradient(to right, #0041a8, #002739); 
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-img {
+  height: 90px; 
+  width: auto;
+  object-fit: contain;
+
+    animation: logoPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes logoPulse {
+  0% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.15) rotate(5deg);
+    filter: brightness(1.2);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1);
+  }
+}
+
+
+
+
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.nav-links a {
+  margin-left: 12px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+
+.jul {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+//   margin-top: 60px;
+  padding-bottom: 10px;
+//   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+ 
+.jul li {
+  list-style: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.3s;
+  color:white;
+}
+ 
+.underline {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(to right, #4be3ed, #598af3);
+  transition: left 0.4s cubic-bezier(0.25, 1.5, 0.5, 1), width 0.4s ease;
+  border-radius: 2px;
+  pointer-events: none;
+}
+ 
+.jul li.active {
+  color: #ffffff;
+  animation: bounceScale 0.4s ease;
+}
+ 
+@keyframes bounceScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
