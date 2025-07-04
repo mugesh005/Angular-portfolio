@@ -2,14 +2,21 @@
     <h2 class="section-title">🚀 My Skills</h2>
 
     <div class="marquee-wrapper">
-        <div class="marquee-content">
-            <div class="skill-chip" *ngFor="let skill of skills">
-                {{ skill }}
-            </div>
-            <!-- Duplicate for infinite scroll -->
+        <div class="static-skills">
             <div class="skill-chip" *ngFor="let skill of skills">
                 {{ skill }}
             </div>
         </div>
+        <div class="marquee-content">
+
+            <div class="logo-marquee-wrapper">
+                <div class="logo-marquee-content">
+                    <img *ngFor="let logo of logos" [src]="logo.file" alt="Skill Logo" class="skill-logo" />
+
+                    <img *ngFor="let logo of logos" [src]="logo.file" alt="Skill Logo" class="skill-logo" />
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>

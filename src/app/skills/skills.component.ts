@@ -19,4 +19,15 @@ export class SkillsComponent {
     'REST API Integration',
     'Git & GitHub'
   ];
+
+  logos = [
+    { name: 'Angular', file: './programing.png' },
+    { name: 'TypeScript', file: './typescript.png' },
+    { name: 'JavaScript', file: 'js.png' },
+    { name: 'HTML5', file: 'html-5.png' },
+    { name: 'CSS3', file: 'css-3.png' },
+    { name: 'SCSS', file: 'sass.png' },
+    { name: 'REST API', file: 'integration.png' },
+    { name: 'Git', file: 'git.png' }
+  ];
 }
