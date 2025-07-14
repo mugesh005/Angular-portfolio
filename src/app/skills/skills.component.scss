@@ -16,18 +16,18 @@
   display: flex;
   width: max-content;
   animation: scrollLeft 30s linear infinite;
-  gap:4.5rem;
+  gap: 4.5rem;
   align-items: center;
-  padding:1rem 0;
+  padding: 1rem 0;
 }
 
 .skill-logo {
   width: 60px;
   height: auto;
-    flex-shrink: 0;
+  flex-shrink: 0;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   transition: transform 0.3s ease;
-  
+
 }
 
 .skill-logo:hover {
@@ -38,6 +38,7 @@
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -46,14 +47,14 @@
 
 .skills-marquee {
   width: 100%;
-    min-height: 100vh;
+  min-height: 100vh;
 
-  background: linear-gradient(to right, #f0f2f5, #e6eaf2);
+  background: linear-gradient(to right, #eef2f3, #dfe9f3);
   padding: 4rem 2rem;
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
-   display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -113,6 +114,7 @@
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }

@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-navbar',
   standalone: false,
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements AfterViewInit {
   navItems = ['About', 'Projects', 'Skills', 'Contact'];
@@ -12,11 +13,31 @@ export class NavbarComponent implements AfterViewInit {
 
   @ViewChild('underline') underline!: ElementRef<HTMLDivElement>;
   @ViewChild('navList') navList!: ElementRef<HTMLUListElement>;
+  @ViewChild('navbar') navbar!: ElementRef<HTMLElement>; // Add #navbar in HTML
 
   ngAfterViewInit(): void {
     setTimeout(() => {
       const activeLi = this.navList.nativeElement.querySelector('li');
       this.setUnderlineTo(activeLi);
+    });
+
+    // Slide navbar from top
+    gsap.from(this.navbar.nativeElement, {
+      y: -100,
+      opacity: 0,
+      duration: 1,
+      ease: 'power4.out',
+    });
+
+    // Stagger in nav items
+    const navItems = this.navList.nativeElement.querySelectorAll('li');
+    gsap.from(navItems, {
+      y: 30,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.6,
+      ease: 'back.out(1.7)',
+      delay: 0.3
     });
   }
 
@@ -34,10 +55,8 @@ export class NavbarComponent implements AfterViewInit {
         Contact: 'contact'
       };
       const id = idMap[text];
-      if (id) {
-        const ele = document.getElementById(id);
-        ele?.scrollIntoView({ behavior: 'smooth' });
-      }
+      const ele = document.getElementById(id);
+      ele?.scrollIntoView({ behavior: 'smooth' });
 
       this.setUnderlineTo(target);
     }
@@ -49,8 +68,11 @@ export class NavbarComponent implements AfterViewInit {
     const parentRect = this.navList.nativeElement.getBoundingClientRect();
     const rect = element.getBoundingClientRect();
 
-    this.underline.nativeElement.style.width = `${rect.width}px`;
-    this.underline.nativeElement.style.left = `${rect.left - parentRect.left}px`;
+    gsap.to(this.underline.nativeElement, {
+      width: rect.width,
+      left: rect.left - parentRect.left,
+      duration: 0.4,
+      ease: 'power3.out',
+    });
   }
-
 }
