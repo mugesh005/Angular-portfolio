@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="navbar" #navbar>
+<!-- <mat-toolbar color="primary" class="navbar" #navbar>
     <span class="logo">
         <img src="removebg-preview.png" alt="Logo" class="logo-img" />
     </span>
@@ -6,6 +6,21 @@
     <ul class="jul" #navList (click)="onClick($event)">
         <li *ngFor="let item of navItems" [class.active]="activeItem === item">
             {{ item }}
+        </li>
+        <div class="underline" #underline></div>
+    </ul>
+</mat-toolbar> -->
+
+<mat-toolbar color="primary" class="navbar" #navbar>
+    <span class="logo">
+        <img src="removebg-preview.png" alt="Logo" class="logo-img" />
+    </span>
+    <span class="spacer"></span>
+
+    <ul class="jul" #navList (click)="onClick($event)">
+        <li *ngFor="let item of navItems" [class.active]="activeItem === item.id" class="nav-icon">
+            <i class="fas {{ item.icon }}"></i>
+            <span class="tooltip-text">{{ item.id }}</span>
         </li>
         <div class="underline" #underline></div>
     </ul>

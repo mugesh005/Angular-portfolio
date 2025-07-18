@@ -97,6 +97,33 @@ button:hover {
 }
 
 
+footer {
+	// margin-top: 100px;
+	background-color: #123857;
+	height: 130px;
+  width: 100%;
+	color: white;
+	overflow: hidden;
+	position: relative;
+	}
+
+footer p {
+	vertical-align: center;
+	margin-top: 8%;
+	margin-bottom: 0px;
+}
+
+footer a {
+	color: white;
+}
+
+footer a:hover {
+	color: #ee2f72;
+}
+
+
+
+
 // .contact-section {
 //   display: flex;
 //   justify-content: center;
